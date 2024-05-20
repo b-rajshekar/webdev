@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <title>Media Query</title>
+  <style>
+    body {
+      background-color: aquamarine;
+    }
+
+    .device-type {
+      font-size: 50px;
+      text-align: center;
+      position: relative;
+    }
+
+    .device-type::after {
+      content: "Detecting Device Type...";
+      display: block;
+      transition: content 0.5s ease-in-out;
+    }
+    
+
+    @media (min-width: 319px) and (max-width: 480px) {
+      body {
+        background-color: lightsalmon;
+      }
+      .device-type::after {
+        content: "Mobile Device";
+      }
+    }
+
+    @media (min-width: 481px) and (max-width: 1200px) {
+      body {
+        background-color: powderblue;
+      }
+      .device-type::after {
+        content: "Tablet";
+      }
+    }
+
+    @media (min-width: 1201px) and (max-width: 1600px) {
+      body {
+        background-color: limegreen;
+      }
+      .device-type::after {
+        content: "Laptop";
+      }
+    }
+
+    @media (min-width: 1601px) {
+      body {
+        background-color: seagreen;
+      }
+      .device-type::after {
+        content: "Desktop";
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <p class="device-type"></p>
+</body>
+
+</html>
